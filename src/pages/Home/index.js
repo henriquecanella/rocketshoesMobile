@@ -15,14 +15,9 @@ import {
 export default function Home() {
   const [products, setProducts] = useState([]);
 
-  console.tron.log(products);
-
   useEffect(() => {
     async function loadProducts() {
       const response = await api.get('products');
-
-      console.tron.log(response);
-
       const { data } = response;
 
       setProducts(data);
@@ -34,7 +29,7 @@ export default function Home() {
     <Container>
       <List
         data={products}
-        keyExtractor={product => product.id}
+        keyExtractor={product => String(product.id)}
         renderItem={({ item }) => (
           <ListContainer>
             <ProductImage source={{ uri: item.image }} />
