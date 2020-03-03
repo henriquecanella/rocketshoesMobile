@@ -15,7 +15,8 @@ const Routes = createAppContainer(
     },
     {
       defaultNavigationOptions: navigation => ({
-        header: <Header {...navigation} />,
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        header: () => <Header {...navigation} />,
       }),
     }
   )
