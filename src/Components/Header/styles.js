@@ -7,6 +7,11 @@ export const Container = styled.View`
   justify-content: space-between;
 `;
 
+export const LogoButton = styled.TouchableHighlight`
+  padding: 5px;
+  border-radius: 4px;
+`;
+
 export const Logo = styled.Image`
   width: 185px;
   height: 24px;

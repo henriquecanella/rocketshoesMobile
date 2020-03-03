@@ -51,6 +51,7 @@ export const ProductButton = styled(RectButton)`
   overflow: hidden;
   margin-top: 5px;
   display: flex;
+  flex-direction: row;
   align-items: center;
 `;
 
@@ -59,4 +60,20 @@ export const ProductButtonText = styled.Text`
   font-weight: bold;
   padding: 10px;
   color: #fff;
+`;
+
+export const ProductAmount = styled.View`
+  flex-direction: row;
+  background: rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+`;
+
+export const ProductButtonAmount = styled.Text`
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 5px;
+  border-radius: 4px;
 `;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import api from '../../services/api';
 
 import {
@@ -10,6 +11,8 @@ import {
   ProductPrice,
   ProductButton,
   ProductButtonText,
+  ProductAmount,
+  ProductButtonAmount,
 } from './styles';
 
 export default function Home() {
@@ -36,6 +39,10 @@ export default function Home() {
             <ProductText>{item.title}</ProductText>
             <ProductPrice>{item.price}</ProductPrice>
             <ProductButton>
+              <ProductAmount>
+                <Icon name="cart-plus" size={15} color="#fff" />
+                <ProductButtonAmount>5</ProductButtonAmount>
+              </ProductAmount>
               <ProductButtonText>ADICIONAR</ProductButtonText>
             </ProductButton>
           </ListContainer>
