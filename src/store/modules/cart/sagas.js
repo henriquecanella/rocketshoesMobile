@@ -18,6 +18,7 @@ function* addToCart({ id }) {
 
   if (amount > stockAmount) {
     console.tron.log('Quantidade solicitada fora de estoque');
+    return;
   }
 
   if (productExists) {
@@ -28,7 +29,7 @@ function* addToCart({ id }) {
     const data = {
       ...response.data,
       amount: 1,
-      priceFormatted: `R$${response.data.price}`,
+      priceFormatted: `R$${response.data.price.toFixed(2)}`,
     };
 
     yield put(addToCartSuccess(data));
@@ -51,5 +52,5 @@ function* updateAmount({ id, amount }) {
 
 export default all([
   takeLatest('@cart/ADD_REQUEST', addToCart),
-  takeLatest('@cart/ADD_AMOUNT_REQUEST', updateAmount),
+  takeLatest('@cart/UPDATE_AMOUNT_REQUEST', updateAmount),
 ]);

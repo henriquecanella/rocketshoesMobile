@@ -35,7 +35,7 @@ export default function Home() {
       const response = await api.get('products');
       const data = response.data.map(product => ({
         ...product,
-        priceFormatted: `R$${product.price}`,
+        priceFormatted: `R$${product.price.toFixed(2)}`,
       }));
 
       setProducts(data);
